@@ -35,30 +35,6 @@ The application follows a layered architecture with the following components:
 9. The `VulnerabilityRepository` interacts with the database to store and retrieve vulnerabilities.
 10. The `GlobalExceptionHandler` handles exceptions and provides meaningful error responses.
 
-## API Details
-- **API Endpoint**: The API endpoint is `/api/v1/trace/{containerId}`.
-
-## Local Setup
-1. **Clone the repository**:
-    ```sh
-    git clone https://github.com/git4neeraj/devsecurityapp.git
-    cd devsecurityapp
-    ```
-
-2. **Install dependencies**:
-   Ensure you have Gradle installed. Then run:
-    ```sh
-    ./gradlew build
-    ```
-
-3. **Run the application**:
-    ```sh
-    ./gradlew bootRun
-    ```
-
-4. **Access the API**:
-   The application will be running at `http://localhost:8080`. You can access the API endpoint at `http://localhost:8080/api/v1/trace/{containerId}`.
-
 ## Class Diagram [Mermaid Syntax]
 ```mermaid
 classDiagram
@@ -142,6 +118,32 @@ sequenceDiagram
     BlameHelper-->>VulnerabilityTraceController: void
     VulnerabilityTraceController-->>User: "Vulnerabilities traced for container: {container.getImageTag()}"
 ```
+
+## API Details
+- **API Endpoint**: The API endpoint is `/api/v1/trace/{containerId}`.
+
+## Local Setup
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/git4neeraj/devsecurityapp.git
+    cd devsecurityapp
+    ```
+
+2. **Install dependencies**:
+   Ensure you have Gradle installed. Then run:
+    ```sh
+    ./gradlew build
+    ```
+
+3. **Run the application**:
+    ```sh
+    ./gradlew bootRun
+    ```
+
+4. **Access the API**:
+   The application will be running at `http://localhost:8080`. You can access the API endpoint at `http://localhost:8080/api/v1/trace/{containerId}`.
+
+
 
 ## Additional Information
 - **Global Exception Handling**: The project includes a `GlobalExceptionHandler` to handle various exceptions and provide meaningful error responses.
