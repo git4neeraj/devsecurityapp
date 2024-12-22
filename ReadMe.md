@@ -11,7 +11,7 @@ This project is a Spring Boot application that traces vulnerabilities in a conta
 - **Lombok**: To reduce boilerplate code.
 - **Log4j2**: For logging.
 
-## System Design
+## System Architecture Diagram
 ![img.png](img.png)
 
 ## Architecture
