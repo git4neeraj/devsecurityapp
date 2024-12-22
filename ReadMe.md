@@ -1,4 +1,4 @@
-# Project Name
+# Devloper Security Tracing Application
 
 ## Overview
 This project is a Spring Boot application that traces vulnerabilities in a containerized environment. It fetches vulnerability data, blames the files in a Git repository, and provides an API to trace vulnerabilities for a given container.
@@ -11,11 +11,38 @@ This project is a Spring Boot application that traces vulnerabilities in a conta
 - **Lombok**: To reduce boilerplate code.
 - **Log4j2**: For logging.
 
+## System Design
+![img.png](img.png)
+
+## Architecture
+The application follows a layered architecture with the following components:
+- **Controller**: Exposes the API endpoints.
+- **Service**: Contains the business logic.
+- **Repository**: Interacts with the database.
+- **Model**: Contains the data models.
+- **Helper**: Contains utility classes.
+- **Exception**: Contains custom exceptions.
+
+## Low-Level Design
+1. The `VulnerabilityTraceController` receives a request to trace vulnerabilities for a container.
+2. It fetches the container details using the `ContainerService`.
+3. It fetches the vulnerabilities for the container using the `VulnerabilityDataService`.
+4. It uses the `BlameHelper` to blame the files in the Git repository.
+5. The `BlameHelper` uses the `GitRepositoryService` to blame the files.
+6. The `BlameHelper` updates the `Vulnerability` objects with the commit that introduced the vulnerability.
+7. The `VulnerabilityTraceController` returns the response with the traced vulnerabilities.
+8. The `VulnerabilityDataService` stores the vulnerabilities in the database.
+9. The `VulnerabilityRepository` interacts with the database to store and retrieve vulnerabilities.
+10. The `GlobalExceptionHandler` handles exceptions and provides meaningful error responses.
+
+## API Details
+- **API Endpoint**: The API endpoint is `/api/v1/trace/{containerId}`.
+
 ## Local Setup
 1. **Clone the repository**:
     ```sh
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/git4neeraj/devsecurityapp.git
+    cd devsecurityapp
     ```
 
 2. **Install dependencies**:
