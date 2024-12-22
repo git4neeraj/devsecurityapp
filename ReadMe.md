@@ -3,6 +3,8 @@
 ## Overview
 This project is a Spring Boot application that traces vulnerabilities in a containerized environment. It fetches vulnerability data, blames the files in a Git repository, and provides an API to trace vulnerabilities for a given container.
 
+For demo purposes, it scans this project's repository `.git` folder. However, if required, you can pass a different Git repository path as an optional request parameter in the Spring Boot controller endpoint.
+
 ## Tech Stack
 - **Java**: Programming language used for development.
 - **Spring Boot**: Framework for building the application.
@@ -141,7 +143,10 @@ sequenceDiagram
     ```
 
 4. **Access the API**:
-   The application will be running at `http://localhost:8080`. You can access the API endpoint at `http://localhost:8080/api/v1/trace/{containerId}`.
+   The application will be running at `http://localhost:8080`. 
+   You can access the API endpoint at `http://localhost:8080/api/v1/trace/{containerId}`.
+   Or
+   You can pass optional Request parameter `repoPath` to trace vulnerabilities for a different Git repository.
 
 
 
