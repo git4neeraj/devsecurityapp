@@ -25,6 +25,10 @@ The application follows a layered architecture with the following components:
 - **Helper**: Contains utility classes.
 - **Exception**: Contains custom exceptions.
 
+## Architecture Decisions
+
+For more detailed documentation, please visit our [ADR Wiki](https://github.com/git4neeraj/devsecurityapp/wiki/Architecture-Decision-Record-(ADR):-SaaS-Vulnerability-Tracking-System).
+
 ## Low-Level Design
 1. The `VulnerabilityTraceController` receives a request to trace vulnerabilities for a container.
 2. It fetches the container details using the `ContainerService`.
