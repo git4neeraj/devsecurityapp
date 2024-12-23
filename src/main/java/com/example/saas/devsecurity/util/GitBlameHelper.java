@@ -1,4 +1,4 @@
-package com.example.saas.devsecurity;
+package com.example.saas.devsecurity.util;
 
 import com.example.saas.devsecurity.domain.GitCommit;
 import com.example.saas.devsecurity.domain.Vulnerability;
